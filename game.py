@@ -1,4 +1,4 @@
-#workshop 5
+#workshop 6 beginning
 import pygame
 from sys import exit  # closes any kind of code
 
