@@ -1,3 +1,4 @@
+#workshop 5
 import pygame
 from sys import exit  # closes any kind of code
 
@@ -8,15 +9,15 @@ clock = pygame.time.Clock()  # to control the how fast frames get change per sec
 
 
 test_font = pygame.font.Font('font/Pixeltype.ttf', 70)
-bg_surface = pygame.image.load("graphics/bg.jpg")
+bg_surface = pygame.image.load("graphics/bg.jpg") # note it is the same size as the screen 700px by 700px
 ground_surface = pygame.image.load('graphics/ground.jpg')
 text_surface = test_font.render('My Game', False, 'Blue')
 
 man_surface = pygame.image.load('graphics/man1.png')
 man_x_pos= 600
 
-man2_surface = pygame.image.load('graphics/man2.png')
-man2_x_pos = 0
+cat_surface = pygame.image.load('graphics/cat.png')
+cat_x_pos = 0
 
 while True:
     for event in pygame.event.get():
@@ -30,16 +31,16 @@ while True:
     screen.blit(text_surface, (300, 10))
     # screen.blit(man_surface,(man_x_pos, 250))
     man_x_pos-=4 #same as man_x_pos = man_x_pos-4
-    man2_x_pos += 4  # same as man_x_pos = man_x_pos-4
+    cat_x_pos += 4  # same as man_x_pos = man_x_pos-4
 
     #create an if statement if goes too far too left
     if man_x_pos < -100:
         man_x_pos = 800
 
-    if man2_x_pos > 800:
-        man2_x_pos = -800
+    if cat_x_pos > 800:
+        cat_x_pos = -800
 
     screen.blit(man_surface, (man_x_pos, 230))
-    screen.blit(man2_surface, (man2_x_pos, 0))
+    screen.blit(cat_surface, (cat_x_pos, 400)) #image width
     pygame.display.update()
     clock.tick(60)
